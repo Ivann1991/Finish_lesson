@@ -42,29 +42,23 @@ int EnterUserNum(string message, string errorMessage)        // количест
         if (int.TryParse(Console.ReadLine(), out int num))
             return Math.Abs(num);
         Console.WriteLine(errorMessage);
-
     }
 }
-
-string EnterElement(string message)        // элементы массива, ввод с клавиатуры
+string EnterElement(string message)                          // элементы массива, ввод с клавиатуры
 {
     while (true)
     {
         Console.Write(message);
         string num = Console.ReadLine() ?? "";
         return num;
-
     }
 }
-
-string[] EnterArrayElement(int size)                            // Заполнение элементов массива с клавиатуры
-
+string[] EnterArrayElement(int size)                         // Заполнение элементов массива с клавиатуры
 {
     string[] array = new string[size];
     for (int i = 0; i < array.Length; i++)
     {
         string element = EnterElement($"заполни {i + 1}-й элемент ");
-
         array[i] = element;
     }
     return array;
